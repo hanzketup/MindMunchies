@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/resp.css">
+<link rel="stylesheet" type="text/css" href="styles/boxes.css">
+
+<link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico|Open+Sans|Press+Start+2P" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="js/ui.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icons/pizza.png">
+
+<title>Mind Munchies</title>
+
+</head>
+<body>
+
+  <div class="overlay" id="overlay" style="display:none;">
+    <div class="overlay-box">
+      <div class="overlay-img">
+        <div class="overlay-icon"><img src="icons/cookie.png" draggable="false"></div>
+      </div>
+      <h2 class="overlay-title">
+        POP-UP title
+      </h2>
+      <div class="overlay-desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar sapien ut nisi semper finibus.
+      </div>
+      <div class="overlay-button-row">
+        <a href="javascript:hide_pop();" class="overlay-button drop drop-tiny drop-red ns">Back</a>
+        <a class="overlay-button drop drop-tiny drop-green ns">Confirm!</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="header">
+    <div class="menu-w">
+      <div class="menu-box">
+
+        <a href="#home" class="title-icon-w">
+        <img src="icons/pizza.png" class="title-icon" alt="go to home" draggable="false"><p class="title-icon-t">Home</p>
+
+      </a><a href="#mymunchies" class="title-icon-w">
+        <img src="icons/french-fries.png" class="title-icon" alt="go to MyMunchies" draggable="false"><p class="title-icon-t">My Munchies</p>
+
+      </a><a href="#achievements" class="title-icon-w">
+        <img src="icons/chocolate.png" class="title-icon"  alt="go to achievements" draggable="false"><p class="title-icon-t">Achievements</p>
+
+      </a><a href="javascript:show_noti();" class="title-icon-w">
+        <img src="icons/soda.png" class="title-icon" alt="go to your profile" draggable="false"><p class="title-icon-t">Me</p>
+      </a>
+
+      </div>
+
+      <div id="noti" class="not-box noti-hide" style="display:none;">
+        <div class="not-content">
+        <a href="javascript:hide_noti();" class="not-close"><i class="fa fa-times-circle-o fa-4x" aria-hidden="true"></i></a>
+        <h2 class="not-text">Munchie added!</h2>
+
+      </div>
+      </div>
+
+    </div>
+<div class="wrap">
+
+<div class="sub-title">Static Sample Page</div>
+
+<div class="desc-wrap">
+<div class="icon-row ns">
+
+<div class="icon-item icon-green" title="Estimated time">
+<i class="fa fa-clock-o fa-4x icon" aria-hidden="true"></i>
+<p class="icon-text"><span class="time">5 Hours</span></p>
+</div>
+
+<div class="icon-item icon-blue" title="Target audience">
+<i class="fa fa-bullseye fa-4x icon" aria-hidden="true"></i>
+<p class="icon-text"><span class="diff">Everyone</span></p>
+</div>
+
+<div class="icon-item icon-red" title="Difficulty level">
+<i class="fa fa-tachometer fa-4x icon" aria-hidden="true"></i>
+<p class="icon-text"><span class="diff">Beginner</span></p>
+</div>
+
+
+</div>
+<p class="desc">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar sapien ut nisi semper finibus. Nulla in dolor sed lectus auctor congue. Nullam tristique dictum nunc id aliquam.
+</p>
+</div>
+
+<div class="button-row">
+
+<a href="javascript:heart_sw();" id="heart-drop" class="drop drop-red drop-heart ns" title="Add to favorites">
+  <i id="heart" class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+</a>
+
+<a href="javascript:more_sw();" class="drop drop-yellow ns">Start Learning!</a>
+
+<a href="#" class="drop drop-green ns">Next Munchie</a>
+</div>
+
+</div>
+</div>
+
+<div class="more" id="more" style="display:block;">
+
+<div class="more-container">
+
+  <div class="more-row">
+
+    <div class="more-item">
+<div class="videow"><iframe src="https://www.youtube.com/embed/G9DKoMSiDc4" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="more-item">
+
+      <div class="more-list-w">
+        <ul class="more-list">
+          <li><a href="#">link to relevant information</a></li>
+          <li><a href="#">link item</a></li>
+          <li><a href="#">link item</a></li>
+          <li><a href="#">link item</a></li>
+          <li><a href="#">link item</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="more-row">
+    <div class="more-item">
+
+      <div class="more-text">
+
+        <h1>Heading</h1>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
+        </p>
+        <h1>Heading</h1>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
+        </p>
+        <h1>Heading</h1>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
+        </p>
+        <h1>Heading</h1>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
+        </p>
+        <h1>Heading</h1>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
+        </p>
+        <h1>Heading</h1>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="more-row">
+
+    <div class="more-item">
+
+    </div>
+
+    <div class="more-item">
+
+    </div>
+
+  </div>
+
+<div class="more-row space-around">
+
+    <a href="https://twitter.com/intent/tweet?text=Hey!%20im%20learning%20cool%20stuff%20check%20it%20out!%20&url=http://mind-munchies.com/" target="_blank" class="drop drop-blue foot-button ns" >
+      <i class="fa fa-share fa-3x" aria-hidden="true"></i>
+      <div class="foot-button-t"><span>Share<br>Munchie!</span></div>
+    </a>
+
+    <a href="javascript:done_sw();show_pop();" id="check-drop" class="drop drop-green drop-done foot-button ns">
+      <i id="check" class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
+      <div class="foot-button-t" id="check-text"><span>Complete<br>Munchie!</span></div>
+    </a>
+
+</div>
+
+
+
+</div>
+<footer>
+  <div class="foot-content">
+
+    <a href="#" class="foot-item">
+      <i class="fa fa-plus" aria-hidden="true" title="Submit a munchie!"></i><span>Submit a munchie!</span>
+    </a>
+
+    <a href="#" class="foot-item">
+      <i class="fa fa-exclamation" aria-hidden="true" title="About the project"></i><span>About the project</span>
+    </a>
+
+    <a href="#" class="foot-item">
+      <i class="fa fa-question" aria-hidden="true" title="Got questions?"></i><span>Got questions?</span>
+    </a>
+
+    <a href="#" class="foot-item">
+      <i class="fa fa-github" aria-hidden="true" title="Find me on github!"></i><span>Find me on github!</span>
+    </a>
+
+  </div>
+</footer>
+</div>
+
+
+
+</body>
+</html>
