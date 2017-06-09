@@ -9,7 +9,7 @@ $('html,body').animate({
 }
 else {
   $('html,body').animate({
-    scrollTop: $(".header").offset().top},'slow');
+    scrollTop: $(".back").offset().top},'slow');
 setTimeout(function(){
     block.style.display = "none";
   }, 750);
@@ -81,12 +81,13 @@ audio.volume = 0.8;
 audio.play();
 
 
-window.setTimeout(hide_noti,5000);
+notitime = window.setTimeout(hide_noti,5000);
 
 }
 
 function hide_noti(){
 
+clearTimeout(notitime);
 document.getElementById("noti").classList.remove('noti-show');
 document.getElementById("noti").classList.add('noti-hide');
 
