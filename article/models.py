@@ -16,6 +16,7 @@ class post(models.Model):
 
     vid = models.CharField(max_length=100)
     links = JSONField()
+    long_desc = JSONField()
 
     def __str__(self):
         return self.title
