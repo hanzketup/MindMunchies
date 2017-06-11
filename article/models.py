@@ -5,7 +5,8 @@ from django.db import models
 from jsonfield import JSONField
 
 
-class post(models.Model):
+class Post(models.Model):
+
     title = models.TextField(max_length=100)
     created = models.DateTimeField(auto_created=True)
     vis = models.BooleanField()
@@ -20,3 +21,9 @@ class post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Stat(models.Model):
+    post_id = models.ManyToManyField
+    usr_id = models.ManyToManyField
+    fav = models.BooleanField
+    done = models.BooleanField
