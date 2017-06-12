@@ -505,6 +505,7 @@ padding: 3rem 6rem 6rem 6rem;
 
 .button-row {
 margin-top: 4rem;
+padding-bottom: 10rem;
 display: flex;
 justify-content: center;
 }

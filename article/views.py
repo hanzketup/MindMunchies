@@ -24,11 +24,12 @@ def get(request, pk):
         artvar = {'title':r.title,
                   'short':r.short_desc,
                   'time':r.time,
-                  'cat':'',
-                  'diff':diff(r.diff),
-                  ' ':' ',}
+                  'cat':'', 'cat-i':'', #needs data
+                  'diff':diff(r.diff)[0], 'difficon':diff(r.diff)[1],
+                  ' ':' ',
+                  }
 
-        return render(request, "article/article.html")
+        return render(request, "article/article.html", artvar)
 
     else:
         return rand()

@@ -4,7 +4,7 @@ from models import Post
 
 
 def diff(din):
-    diff_dict = {1:'Easy',2:'intermediate',3:'advanced'}
+    diff_dict = {1:['Beginner','icon-green'],2:['Intermediate','icon-blue'],3:['Advanced','icon-red']}
     return diff_dict[din]
 
 def vid(vin):

@@ -4,13 +4,20 @@ from __future__ import unicode_literals
 from django.db import models
 from jsonfield import JSONField
 
+class Cat(models.Model):
+    title = models.TextField(max_length=40)
+    icon = models.CharField(max_length=100)
+    color = models.CharField(max_length=20,blank=True)
+
+    def __str__(self):
+        return self.title
 
 class Post(models.Model):
 
     title = models.TextField(max_length=100)
     created = models.DateTimeField(auto_created=True)
     vis = models.BooleanField()
-    acat = models.ManyToManyField
+    acat = models.ManyToManyField(Cat)
 
     short_desc = models.TextField()
     time = models.IntegerField()
@@ -25,15 +32,7 @@ class Post(models.Model):
         return self.title
 
 class Stat(models.Model):
-    post_id = models.ManyToManyField
+    post_id = models.ManyToManyField(Post)
     usr_id = models.ManyToManyField
     fav = models.BooleanField
     done = models.BooleanField
-
-class Cat(models.Model):
-    title = models.TextField(max_length=40)
-    icon = models.CharField(max_length=100)
-    color = models.CharField(max_length=20,blank=True)
-
-    def __str__(self):
-        return self.title

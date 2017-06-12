@@ -4,14 +4,14 @@
 
 <div class="wrap">
 
-<div class="sub-title">Static Sample Page</div>
+<div class="sub-title">{{title}}</div>
 
 <div class="desc-wrap">
 <div class="icon-row ns">
 
 <div class="icon-item icon-green" title="Estimated time">
 <i class="fa fa-clock-o fa-4x icon" aria-hidden="true"></i>
-<p class="icon-text"><span class="time">5 Hours</span></p>
+<p class="icon-text"><span class="time">{{time}} Hours</span></p>
 </div>
 
 <div class="icon-item icon-blue" title="Target audience">
@@ -19,16 +19,14 @@
 <p class="icon-text"><span class="diff">Everyone</span></p>
 </div>
 
-<div class="icon-item icon-red" title="Difficulty level">
+<div class="icon-item {{difficon}}" title="Difficulty level">
 <i class="fa fa-tachometer fa-4x icon" aria-hidden="true"></i>
-<p class="icon-text"><span class="diff">Beginner</span></p>
+<p class="icon-text"><span class="diff">{{diff}}</span></p>
 </div>
 
 
 </div>
-<p class="desc">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar sapien ut nisi semper finibus. Nulla in dolor sed lectus auctor congue. Nullam tristique dictum nunc id aliquam.
-</p>
+<p class="desc">{{short}}</p>
 </div>
 
 <div class="button-row">
