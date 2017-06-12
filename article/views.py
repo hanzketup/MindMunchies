@@ -24,9 +24,11 @@ def get(request, pk):
         artvar = {'title':r.title,
                   'short':r.short_desc,
                   'time':r.time,
-                  'cat':'', 'cat-i':'', #needs data
-                  'diff':diff(r.diff)[0], 'difficon':diff(r.diff)[1],
-                  ' ':' ',
+                  'cat':getcat(r)[0], 'caticon':getcat(r)[1],'catcolor':getcat(r)[2],
+                  'diff':diff(r.diff)[0], 'diffcolor':diff(r.diff)[1],
+                  'vid':r.vid,
+                  'links':parselinks(r.links),
+                  'long':parsetxt(r.long_desc),
                   }
 
         return render(request, "article/article.html", artvar)

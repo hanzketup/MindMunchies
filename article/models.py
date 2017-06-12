@@ -17,11 +17,10 @@ class Post(models.Model):
     title = models.TextField(max_length=100)
     created = models.DateTimeField(auto_created=True)
     vis = models.BooleanField()
-    acat = models.ManyToManyField(Cat)
 
     short_desc = models.TextField()
     time = models.IntegerField()
-    cat = models.IntegerField()
+    acat = models.ManyToManyField(Cat)
     diff = models.IntegerField()
 
     vid = models.CharField(max_length=100)

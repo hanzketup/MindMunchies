@@ -14,12 +14,12 @@
 <p class="icon-text"><span class="time">{{time}} Hours</span></p>
 </div>
 
-<div class="icon-item icon-blue" title="Target audience">
-<i class="fa fa-bullseye fa-4x icon" aria-hidden="true"></i>
-<p class="icon-text"><span class="diff">Everyone</span></p>
+<div class="icon-item" title="Target audience" style="color:{{catcolor}};">
+<i class="fa {{caticon}} fa-4x icon" aria-hidden="true"></i>
+<p class="icon-text"><span class="diff">{{cat}}</span></p>
 </div>
 
-<div class="icon-item {{difficon}}" title="Difficulty level">
+<div class="icon-item {{diffcolor}}" title="Difficulty level">
 <i class="fa fa-tachometer fa-4x icon" aria-hidden="true"></i>
 <p class="icon-text"><span class="diff">{{diff}}</span></p>
 </div>
@@ -50,19 +50,15 @@
   <div class="more-row">
 
     <div class="more-item">
-<div class="videow"><iframe src="https://www.youtube.com/embed/G9DKoMSiDc4" allowfullscreen></iframe></div>
-
+<div class="videow"><iframe src="https://www.youtube.com/embed/{{vid|safe}}" allowfullscreen></iframe></div>
     </div>
 
     <div class="more-item">
 
       <div class="more-list-w">
         <ul class="more-list">
-          <li><a href="#">link to relevant information on the subject</a></li>
-          <li><a href="#">link item</a></li>
-          <li><a href="#">link item</a></li>
-          <li><a href="#">link item</a></li>
-          <li><a href="#">link item</a></li>
+          {{links|safe}}
+
         </ul>
       </div>
     </div>
@@ -73,29 +69,7 @@
     <div class="more-item">
 
       <div class="more-text">
-
-        <h1>Heading</h1>
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
-        </p>
-        <h1>Heading</h1>
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
-        </p>
-        <h1>Heading</h1>
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
-        </p>
-        <h1>Heading</h1>
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
-        </p>
-        <h1>Heading</h1>
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ipsum et lacus finibus dictum. Nam iaculis metus maximus elit iaculis maximus. Maecenas lorem libero, tincidunt eu molestie id, mattis et eros. Etiam sed justo faucibus, ornare est a, ultricies orci. Integer sodales, nisi eget blandit sodales, leo nibh scelerisque diam, at ultrices sapien tellus nec lacus. Quisque non consectetur mauris, a porta justo. Suspendisse potenti.
-        </p>
-        <h1>Heading</h1>
-
+        {{long|safe}}
       </div>
 
     </div>
