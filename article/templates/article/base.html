@@ -22,6 +22,15 @@
 </head>
 <body>
 
+  <audio id="ding">
+    <source src="{% static 'sound/ding.mp3' %}" type="audio/mpeg">
+      <source src="{% static 'sound/ding.ogg' %}" type="audio/ogg">
+      </audio>
+      <audio id="success">
+        <source src="{% static 'sound/success.mp3' %}" type="audio/mpeg">
+          <source src="{% static 'sound/success.ogg' %}" type="audio/ogg">
+          </audio>
+
   <div class="overlay" id="overlay" style="display:none;">
     <div class="overlay-box">
       <div class="overlay-img">
@@ -45,7 +54,7 @@
     <div class="menu-w">
       <div class="menu-box">
 
-        <a href="#home" class="title-icon-w">
+        <a href="/" class="title-icon-w">
         <img src="{% static 'icons/pizza.png' %}" class="title-icon" alt="go to home" draggable="false"><p class="title-icon-t">Home</p>
 
       </a><a href="#mymunchies" class="title-icon-w">

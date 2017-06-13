@@ -54,7 +54,7 @@ return;
 
 function show_pop(){
 
-  var audio = new Audio('sounds/success.mp3');
+  var audio = document.getElementById('success');
   audio.volume = 0.5;
   audio.play();
 
@@ -76,7 +76,7 @@ window.setTimeout(function(){
 },1);
 
 
-var audio = new Audio('sounds/ding.mp3');
+var audio = document.getElementById('ding');
 audio.volume = 0.8;
 audio.play();
 

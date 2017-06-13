@@ -239,9 +239,32 @@ margin-bottom: 6rem;
 color:rgba(26, 188, 156,1.0);
 text-shadow: 4px 4px 1px rgba(22, 160, 133,1.0);
 
+}
+
+.title {
+
+font-family: 'Pacifico';
+text-align: center;
+font-size: 10em;
+line-height: 120%;
+
+padding-top: 12rem;
+margin-bottom: 6rem;
+
+color:rgba(26, 188, 156,1.0);
+text-shadow: 4px 4px 1px rgba(22, 160, 133,1.0);
 
 }
 /************************************************************************************************** */
+
+.big-block {
+
+  width:80%;
+
+  background-color: white;
+
+}
+
 .base {
 
 height: auto;

@@ -8,7 +8,10 @@ from models import Post
 from articlefunc import *
 
 def index(request):
-    return render(request,"article/munchies.html")
+    topage = {
+        'title':homewell(),
+    }
+    return render(request,"article/home.html", topage)
 
 
 def rand(request):
@@ -23,15 +26,13 @@ def get(request, pk):
     if r.vis:
         artvar = {'title':r.title,
                   'short':r.short_desc,
-                  'time':r.time,
+                  'time':r.time,'timeicon':timeicon(r.time),
                   'cat':getcat(r)[0], 'caticon':getcat(r)[1],'catcolor':getcat(r)[2],
                   'diff':diff(r.diff)[0], 'diffcolor':diff(r.diff)[1],
-                  'vid':r.vid,
+                  'vid':r.vid,'vidvis':vidcheck(r.vid),
                   'links':parselinks(r.links),
                   'long':parsetxt(r.long_desc),
                   }
-
         return render(request, "article/article.html", artvar)
-
     else:
         return rand()

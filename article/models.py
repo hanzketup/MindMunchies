@@ -23,7 +23,7 @@ class Post(models.Model):
     acat = models.ManyToManyField(Cat)
     diff = models.IntegerField()
 
-    vid = models.CharField(max_length=100)
+    vid = models.CharField(max_length=100,blank=True)
     links = JSONField()
     long_desc = JSONField()
 
