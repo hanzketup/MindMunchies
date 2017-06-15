@@ -15,9 +15,9 @@
 
 <script src="{% static 'js/ui.js' %}"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="{% static 'icons/pizza.png' %}">
+<link rel="icon" href="{% static 'icons/cupcake.png' %}">
 
-<title>Mind Munchies</title>
+<title>{% block title %}{% endblock %} -- MindMunchies</title>
 
 </head>
 <body>
@@ -49,21 +49,21 @@
 
     </div>
   </div>
-  <div class="back base">
+  <div class="{{wrap}}">
 
     <div class="menu-w">
       <div class="menu-box">
 
         <a href="/" class="title-icon-w">
-        <img src="{% static 'icons/pizza.png' %}" class="title-icon" alt="go to home" draggable="false"><p class="title-icon-t">Home</p>
+        <img src="{% static 'icons/cupcake.png' %}" class="title-icon" alt="go to home" draggable="false"><p class="title-icon-t">Home</p>
 
-      </a><a href="#mymunchies" class="title-icon-w">
+      </a><a href="/my-munchies" class="title-icon-w">
         <img src="{% static 'icons/french-fries.png' %}" class="title-icon" alt="go to MyMunchies" draggable="false"><p class="title-icon-t">My Munchies</p>
 
       </a><a href="#achievements" class="title-icon-w">
         <img src="{% static 'icons/chocolate.png' %}" class="title-icon"  alt="go to achievements" draggable="false"><p class="title-icon-t">Achievements</p>
 
-      </a><a href="javascript:show_noti();" class="title-icon-w">
+      </a><a href="/me" class="title-icon-w">
         <img src="{% static 'icons/soda.png' %}" class="title-icon" alt="go to your profile" draggable="false"><p class="title-icon-t">Me</p>
       </a>
 
@@ -82,8 +82,7 @@
 
 {% block content %}
 {% endblock %}
-
-
+    </div>
     <footer>
       <div class="foot-content">
 
@@ -105,9 +104,5 @@
 
       </div>
     </footer>
-    </div>
-
-
-
   </body>
 </html>

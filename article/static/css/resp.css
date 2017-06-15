@@ -22,6 +22,7 @@
   .noti-show{width: 100%;}
 
   .sub-title{font-size: 5em;}
+  .title{font-size: 5em;margin-bottom:2rem;padding-top:9rem;}
   .desc-wrap{margin: 0 0.5rem;}
   .base-content{margin: 0 0rem;}
   .icon-row{flex-direction: column;}
@@ -34,6 +35,20 @@
   .more-row{flex-direction: column;}
 
   footer {width: 100%; margin: 0;}
+
+  .home-title{font-size:4rem;text-shadow: 2px 2px 0px rgba(41, 128, 185,1.0);}
+  .home-row{padding:2rem 0;flex-direction: column;}
+  .home-text{font-size: 2em;margin:1rem;}
+
+  input[type=text],input[type=password] {
+
+    height: 6rem;
+    width: 25rem;
+    font-size: 2.5rem;
+    margin-left:0;
+    margin-right:0;
+
+  }
 
 }
 
@@ -78,4 +93,3 @@ body::-webkit-scrollbar-thumb {
   background-color:rgba(189, 195, 199,1.0);
   outline: 1px solid slategrey;
 }
-

@@ -1,0 +1,20 @@
+{% extends "article/block.html" %}
+{% block title %}Home{% endblock %}
+{% block block-title %}Sign in{% endblock %}
+{% block block-content %}
+{% load staticfiles %}
+
+
+<form method="POST">
+      {% csrf_token %}
+
+      <div class="center"><input type="text" placeholder="Username" name="username" style="border: 4px dashed {{borderstyle}};"></div>
+
+      <div class="center"><input type="password" placeholder="Password" name="password" style="border: 4px dashed {{borderstyle}};"></div>
+      <button class="drop drop-blue form-btn" type="submit">Login</button>
+
+  </form>
+
+<a href="" class="drop drop-green form-btn">Create account</a>
+
+{% endblock %}

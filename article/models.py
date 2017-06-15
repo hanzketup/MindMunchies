@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.db import models
 from jsonfield import JSONField
 
+from django.contrib.auth.models import User
+
 class Cat(models.Model):
     title = models.TextField(max_length=40)
     icon = models.CharField(max_length=100)
@@ -32,6 +34,6 @@ class Post(models.Model):
 
 class Stat(models.Model):
     post_id = models.ManyToManyField(Post)
-    usr_id = models.ManyToManyField
-    fav = models.BooleanField
-    done = models.BooleanField
+    usr_id = models.ManyToManyField(User)
+    fav = models.BooleanField()
+    done = models.BooleanField()
