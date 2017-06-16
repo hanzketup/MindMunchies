@@ -7,7 +7,11 @@ urlpatterns = [
     url(r'^munchie/$', views.rand),
     url(r'munchie/(?P<pk>\d+)/$', views.get),
     url(r'me$', views.me),
-    url(r'^my-munchies$', views.mymunchies),
+    url(r'^munchies$', views.munchies),
+    url(r'^munchies/saved$', views.munchies_s),
+    url(r'^munchies/done$', views.munchies_d),
+    url(r'^achievements$', views.arr),
     url(r'^login/$', views.logg),
+    url(r'^logout/$', views.loggout),
 
 ]

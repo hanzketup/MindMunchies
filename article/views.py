@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render,render_to_response,redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponse,HttpResponseRedirect
 from models import Post
 from articlefunc import *
@@ -10,7 +10,7 @@ from articlefunc import *
 
 def index(request):
     topage = {
-        'title':homewell(),
+        'title':homewell(request),
     }
     return render(request,"article/home.html", topage)
 
@@ -43,17 +43,36 @@ def me(request):
 
     if request.user.is_authenticated():
 
-        return render(request,"registration/me.html")
+        return render(request,"article/me.html")
     else:
         return redirect('/login')
 
-def mymunchies(request):
-    if request.user.is_authenticated():
+def munchies(request):
+        cont = {
+            'a':'drop-hover',
+            'b':' ',
+            'c':' ',
+            'art':'',
 
+        }
+        return render(request,"article/munchies.html", cont)
+
+def munchies_s(request):
+    if request.user.is_authenticated():
         return render(request,"article/munchies.html")
     else:
         return redirect('/login')
 
+def munchies_d(request):
+    if request.user.is_authenticated():
+        cont = {'art':renderprev([1, ])}
+        return render(request,"article/munchies.html", cont)
+    else:
+        return redirect('/login')
+
+
+def arr(request):
+    return render(request,'article/arr.html')
 
 def logg(request):
     if request.method == 'GET':
@@ -68,3 +87,7 @@ def logg(request):
             return redirect('/')
         else:
             return render(request,'registration/login.html',{'borderstyle':'rgba(231, 76, 60,1.0)','msg':'Incorrect username/password!'})
+
+def loggout(request):
+    logout(request)
+    return redirect('/')

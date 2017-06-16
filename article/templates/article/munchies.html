@@ -1,107 +1,36 @@
 {% extends "article/base.html" %}
-{% block title %}{% endblock %}
+{% block title %}Munchies{% endblock %}
 {% block content %}
 <div class="wrap">
 
-<div class="sub-title">My Munchies!</div>
+<div class="title">Munchies!</div>
+<div class="filter-wrap">
+<div class="filter">
+<a href="/munchies/all" class="drop drop-blue filter-item {{a}} ">All  </a>
+<a href="/munchies/saved" class="drop drop-red filter-item {{b}} ">Saved </a>
+<a href="/munchies/done" class="drop drop-green filter-item {{c}} ">Done</a>
+</div>
+</div>
 
 <section class="article-grid">
 
-<a class="grid-item">
-<div class="grid-item-top">
-<div class="grid-item-icon">
-<div class="grid-item-check"><i class="fa fa-check" aria-hidden="true"></i></div>
-<div class="grid-item-heart"><i class="fa fa-heart" aria-hidden="true"></i></div>
-<i class="fa fa-code fa-5x" aria-hidden="true"></i>
-</div>
-</div>
-<div class="grid-item-title"><p>This is a long title<p></div>
-<div class="grid-item-box-wrap">
-<div class="grid-item-box icon-blue-b"></div>
-<div class="grid-item-box icon-red-b"></div>
-<div class="grid-item-box icon-green-b"></div>
-</div>
-</a>
-
-<a class="grid-item">
-<div class="grid-item-top">
-<div class="grid-item-icon">
-<div class="grid-item-check"><i class="fa fa-check" aria-hidden="true"></i></div>
-<div class="grid-item-heart"><i class="fa fa-heart" aria-hidden="true"></i></div>
-<i class="fa fa-code fa-5x" aria-hidden="true"></i>
-</div>
-</div>
-<div class="grid-item-title"><p>Regex - Regular expressions<p></div>
-<div class="grid-item-box-wrap">
-<div class="grid-item-box icon-blue-b"></div>
-<div class="grid-item-box icon-red-b"></div>
-<div class="grid-item-box icon-green-b"></div>
-</div>
-</a>
-
-<a class="grid-item">
-<div class="grid-item-top">
-<div class="grid-item-icon">
-<div class="grid-item-check"><i class="fa fa-check" aria-hidden="true"></i></div>
-<div class="grid-item-heart"><i class="fa fa-heart" aria-hidden="true"></i></div>
-<i class="fa fa-code fa-5x" aria-hidden="true"></i>
-</div>
-</div>
-<div class="grid-item-title"><p>Regex - Regular expressions<p></div>
-<div class="grid-item-box-wrap">
-<div class="grid-item-box icon-blue-b"></div>
-<div class="grid-item-box icon-red-b"></div>
-<div class="grid-item-box icon-green-b"></div>
-</div>
-</a>
-
-<a class="grid-item">
-<div class="grid-item-top">
-<div class="grid-item-icon">
-<div class="grid-item-check"><i class="fa fa-check" aria-hidden="true"></i></div>
-<div class="grid-item-heart"><i class="fa fa-heart" aria-hidden="true"></i></div>
-<i class="fa fa-code fa-5x" aria-hidden="true"></i>
-</div>
-</div>
-<div class="grid-item-title"><p>Regex - Regular expressions<p></div>
-<div class="grid-item-box-wrap">
-<div class="grid-item-box icon-blue-b"></div>
-<div class="grid-item-box icon-red-b"></div>
-<div class="grid-item-box icon-green-b"></div>
-</div>
-</a>
-
-<a class="grid-item">
-<div class="grid-item-top">
-<div class="grid-item-icon">
-<div class="grid-item-check"><i class="fa fa-check" aria-hidden="true"></i></div>
-<div class="grid-item-heart"><i class="fa fa-heart" aria-hidden="true"></i></div>
-<i class="fa fa-code fa-5x" aria-hidden="true"></i>
-</div>
-</div>
-<div class="grid-item-title"><p>Regex - Regular expressions<p></div>
-<div class="grid-item-box-wrap">
-<div class="grid-item-box icon-blue-b"></div>
-<div class="grid-item-box icon-red-b"></div>
-<div class="grid-item-box icon-green-b"></div>
-</div>
-</a>
-
-<a class="grid-item">
-<div class="grid-item-top">
-<div class="grid-item-icon">
-<div class="grid-item-check"><i class="fa fa-check" aria-hidden="true"></i></div>
-<div class="grid-item-heart"><i class="fa fa-heart" aria-hidden="true"></i></div>
-<i class="fa fa-code fa-5x" aria-hidden="true"></i>
-</div>
-</div>
-<div class="grid-item-title"><p>Regex - Regular expressions<p></div>
-<div class="grid-item-box-wrap">
-<div class="grid-item-box icon-blue-b"></div>
-<div class="grid-item-box icon-red-b"></div>
-<div class="grid-item-box icon-green-b"></div>
-</div>
-</a>
+  {% for e in art %}
+  <a href="/munchie/{{e.pk}}" class="grid-item">
+  <div class="grid-item-top">
+  <div class="grid-item-icon">
+  <div class="grid-item-check" style="display:;"><i class="fa fa-check" aria-hidden="true"></i></div>
+  <div class="grid-item-heart" style="display:;"><i class="fa fa-heart" aria-hidden="true"></i></div>
+  <i class="fa {{e.cat}} fa-5x" aria-hidden="true"></i>
+  </div>
+  </div>
+  <div class="grid-item-title"><p>{{e.title}}<p></div>
+  <div class="grid-item-box-wrap">
+  <div class="grid-item-box" style="background-color:{{e.b1}};"></div>
+  <div class="grid-item-box" style="background-color:{{e.b2}};"></div>
+  <div class="grid-item-box" style="background-color:{{e.b3}}"></div>
+  </div>
+  </a>
+     {% endfor %}
 
 </section>
 </div>

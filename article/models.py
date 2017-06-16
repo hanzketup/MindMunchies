@@ -35,5 +35,5 @@ class Post(models.Model):
 class Stat(models.Model):
     post_id = models.ManyToManyField(Post)
     usr_id = models.ManyToManyField(User)
-    fav = models.BooleanField()
-    done = models.BooleanField()
+    fav = models.BooleanField(default=False)
+    done = models.BooleanField(default=False)

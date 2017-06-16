@@ -6,13 +6,16 @@ from models import Post,Cat
 
 #Home functions
 
-def homewell():
-    mess = ['Welcome!','Hi!','Hey!','Hello!','Yo!','Wassup!','Howdy!','Hey you!']
-    return random.choice(mess)
+def homewell(request):
+    if request.user.is_authenticated():
+        return 'Hi, ' + request.user.username + '!'
+    else:
+        mess = ['Welcome!','Hi!','Hey!','Hello!','Yo!','Wassup!','Howdy!','Hey you!']
+        return random.choice(mess)
 
 #Article functions
 def diff(din):
-    diff_dict = {1:['Beginner','icon-green'],2:['Intermediate','icon-blue'],3:['Advanced','icon-red']}
+    diff_dict = {1:['Beginner','#27ae60'],2:['Intermediate','#3498db'],3:['Advanced','#cc6055']}
     return diff_dict[din]
 
 def getrandom():
@@ -25,13 +28,13 @@ def getrandom():
 def timeicon(time):
 
     if time < 2:
-        return 'icon-green'
+        return '#27ae60'
     elif time > 2 and time < 8:
-        return 'icon-blue'
+        return '#3498db'
     elif time > 8:
-        return 'icon-red'
+        return '#cc6055'
     else:
-        return 'icon-green'
+        return '#27ae60'
 
 def getcat(r):
     val = r.acat.all()[0]
@@ -57,3 +60,17 @@ def parsetxt(inp):
         snd += "<h1>" + str(k) + "</h1><p>" + str(v) + "</p>"
     return snd
 
+def renderprev(pk): #needs stat conn
+    rtn = []
+    for i in pk:
+        obj = Post.objects.get(pk=i)
+        di = {
+            'title':obj.title,
+            'cat':getcat(obj)[1],
+            'b1':timeicon(obj.time),
+            'b2':getcat(obj)[2],
+            'b3':diff(obj.diff)[1],
+            'pk':obj.pk,
+        }
+        rtn.append(di)
+    return rtn

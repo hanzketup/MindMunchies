@@ -40,6 +40,9 @@
   .home-row{padding:2rem 0;flex-direction: column;}
   .home-text{font-size: 2em;margin:1rem;}
 
+  .filter-item{width: 100%;text-align: center;}
+  .me-title{font-size:4rem;}
+
   input[type=text],input[type=password] {
 
     height: 6rem;

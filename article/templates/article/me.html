@@ -3,6 +3,12 @@
 {% block block-title %}Me{% endblock %}
 {% block block-content %}
 
+<div class="me-wrap">
 
+<div class="me-title">{{request.user.username}}</div>
+
+<a href="/logout" class="drop drop-red drop-fw">Log Off</a>
+
+</div>
 
 {% endblock %}
