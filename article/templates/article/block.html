@@ -1,18 +1,15 @@
-{% extends "article/base.html" %}
-
-{% block content %}
+{% extends "article/base.html" %} {% block content %}
 <div class="wrap">
 
-<div class="title">{% block block-title %}{% endblock %}</div>
+  <div class="title">{% block block-title %}{% endblock %}</div>
 
-<div class="block-wrap">
-<div class="big-block">
+  <div class="block-wrap">
+    <div class="big-block">
 
-{% block block-content %}
-{% endblock %}
+      {% block block-content %} {% endblock %}
 
-</div>
-</div>>
+    </div>
+  </div>>
 
 </div>
 {% endblock %}

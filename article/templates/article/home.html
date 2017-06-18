@@ -1,8 +1,4 @@
-{% extends "article/block.html" %}
-{% block title %}Home{% endblock %}
-{% block block-title %}{{title}}{% endblock %}
-{% block block-content %}
-{% load staticfiles %}
+{% extends "article/block.html" %} {% block title %}Home{% endblock %} {% block block-title %}{{title}}{% endblock %} {% block block-content %} {% load staticfiles %}
 <div class="home-row">
 
   <p class="home-title">Learn awesome skills, taught by the internet!</p>
@@ -12,27 +8,37 @@
 <div class="home-row xrow">
 
 
-<div class="home-item"><div class="home-icon">
-<img src="{% static 'icons/cupcake.png' %}" draggable="false">
-</div></div>
+  <div class="home-item">
+    <div class="home-icon">
+      <img src="{% static 'icons/cupcake.png' %}" draggable="false">
+    </div>
+  </div>
 
-<div class="home-item"><div class="home-text">
-This is a Munchie!<br> Munchies are bite-sized pieces of knowledge to feed your brain<wbr> and gain smarts!
-</div></div></div>
+  <div class="home-item">
+    <div class="home-text">
+      This is a Munchie!<br> Munchies are bite-sized pieces of knowledge to feed your brain<wbr> and gain smarts!
+    </div>
+  </div>
+</div>
 
 <div class="home-row xrow">
 
 
-<div class="home-item"><div class="home-icon">
-<img src="{% static 'icons/milk.png' %}" draggable="false">
-</div></div>
+  <div class="home-item">
+    <div class="home-icon">
+      <img src="{% static 'icons/milk.png' %}" draggable="false">
+    </div>
+  </div>
 
-<div class="home-item"><div class="home-text">
-This is a You!<br>Create an account & Complete munchies to gain experience and achievements!
-</div></div></div>
+  <div class="home-item">
+    <div class="home-text">
+      This is a You!<br>Create an account & Complete munchies to gain experience and achievements!
+    </div>
+  </div>
+</div>
 
 <div class="home-row center">
-<a href="http://127.0.0.1:8000/munchie" class="drop drop-green drop-huge">Lets go!
+  <a href="http://127.0.0.1:8000/munchie" class="drop drop-green drop-huge">Lets go!
 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
 </a>
 </div>

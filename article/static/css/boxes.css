@@ -1,115 +1,110 @@
-
 /*Video*/
-
-
 
 
 /*list*/
 
-.more-list-w {
-
-}
+.more-list-w {}
 
 .more-list {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-
-.more-list > li::before {
-content: '\f054';
-font-family: FontAwesome;
-margin-right: 2rem;
+.more-list>li::before {
+  content: '\f054';
+  font-family: FontAwesome;
+  margin-right: 2rem;
   padding: 1.5rem 0rem 2rem 3rem;
 }
 
-.more-list li > a{
-
-font-family: 'Press Start 2P', cursive;
-text-decoration: none !important;
-text-shadow: 1px 1px 0px rgba(52, 73, 94,0.8);
-padding: 1.5rem 3rem;
-flex:4;
+.more-list li>a {
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none !important;
+  text-shadow: 1px 1px 0px rgba(52, 73, 94, 0.8);
+  padding: 1.5rem 3rem;
+  flex: 4;
 }
 
-.more-list li:nth-child(odd) > a {
-color:rgba(22, 160, 133,1.0) !important;}
-
-.more-list li:nth-child(even) > a {
-color:rgba(241, 196, 15,1.0) !important;}
-
-.more-list li > a:hover{
-
-text-decoration: none !important;
-
+.more-list li:nth-child(odd)>a {
+  color: rgba(22, 160, 133, 1.0) !important;
 }
 
+.more-list li:nth-child(even)>a {
+  color: rgba(241, 196, 15, 1.0) !important;
+}
 
+.more-list li>a:hover {
+  text-decoration: none !important;
+}
 
-  .more-list li {
-
+.more-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   position: relative;
   top: 0;
-
   box-shadow: 0px 10px;
   margin: 1rem 0.5rem;
   transition: all 0.1s ease-out;
   text-decoration: none;
   font-size: 1.5em;
-  text-shadow: 1px 1px 0px rgba(52, 73, 94,1.0);
-
+  text-shadow: 1px 1px 0px rgba(52, 73, 94, 1.0);
   text-align: center;
+  background-color: rgba(26, 188, 156, 0.8);
+  color: rgba(22, 160, 133, 1.0);
+}
 
-  background-color: rgba(26, 188, 156,0.8);
-  color:rgba(22, 160, 133,1.0);
-  }
-
-  .more-list li:hover {
+.more-list li:hover {
   top: 5px;
   box-shadow: 0 5px;
-  }
+}
 
-  .more-list li:nth-child(odd) {
+.more-list li:nth-child(odd) {
+  background-color: rgba(26, 188, 156, 0.8);
+  color: rgba(22, 160, 133, 1.0) !important;
+}
 
-    background-color:rgba(26, 188, 156,0.8);
-    color:rgba(22, 160, 133,1.0) !important;
+.more-list li:nth-child(even) {
+  background-color: rgba(243, 156, 18, 0.8);
+  color: rgba(241, 196, 15, 1.0) !important;
+}
 
-  }
-  .more-list li:nth-child(even) {
-
-    background-color:rgba(243, 156, 18,0.8);
-    color:rgba(241, 196, 15,1.0) !important;
-
-  }
 
 /*text*/
 
-.more-text {
-
-
-
-}
+.more-text {}
 
 .more-text h1 {
-font-family: 'Press Start 2P', cursive;
-text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
-.more-text h1:nth-child(1){color:rgba(52, 152, 219,1.0);}
-.more-text h1:nth-child(3){color:rgba(39, 174, 96,1.0);}
-.more-text h1:nth-child(5){color:rgba(192, 57, 43,1.0);}
-.more-text h1:nth-child(7){color:rgba(142, 68, 173,1.0);}
-.more-text h1:nth-child(9){color:rgba(243, 156, 18,1.0);}
-.more-text h1:nth-child(11){color:rgba(22, 160, 133,1.0);}
+
+.more-text h1:nth-child(1) {
+  color: rgba(52, 152, 219, 1.0);
+}
+
+.more-text h1:nth-child(3) {
+  color: rgba(39, 174, 96, 1.0);
+}
+
+.more-text h1:nth-child(5) {
+  color: rgba(192, 57, 43, 1.0);
+}
+
+.more-text h1:nth-child(7) {
+  color: rgba(142, 68, 173, 1.0);
+}
+
+.more-text h1:nth-child(9) {
+  color: rgba(243, 156, 18, 1.0);
+}
+
+.more-text h1:nth-child(11) {
+  color: rgba(22, 160, 133, 1.0);
+}
 
 .more-text p {
-
   padding: 2rem 6rem;
-
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
-
 }

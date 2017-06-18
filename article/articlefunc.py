@@ -63,9 +63,19 @@ def parsetxt(inp):
 
 def renderprev(pk,req):
     rtn = []
+
+
     for i in pk:
+        d = False
+        s = False
         obj = Post.objects.get(pk=i.pk)
-        stat = check_stat(art=obj,usr=req.user.pk)
+        if req.user.is_authenticated():
+            stat = check_stat(art=obj,usr=req.user.pk)
+            d = stat[0]
+            s = stat[1]
+
+
+
         di = {
             'title':obj.title,
             'cat':getcat(obj)[1],
@@ -73,8 +83,8 @@ def renderprev(pk,req):
             'b2':getcat(obj)[2],
             'b3':diff(obj.diff)[1],
             'pk':obj.pk,
-            'done':stat[0],
-            'saved':stat[1],
+            'done':d,
+            'saved':s,
         }
         if obj.vis:
             rtn.append(di)

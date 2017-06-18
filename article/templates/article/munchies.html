@@ -1,37 +1,39 @@
-{% extends "article/base.html" %}
-{% block title %}Munchies{% endblock %}
-{% block content %}
+{% extends "article/base.html" %} {% block title %}Munchies{% endblock %} {% block content %}
 <div class="wrap">
 
-<div class="title">Munchies!</div>
-<div class="filter-wrap">
-<div class="filter">
-<a href="javascript:filt(0);" class="drop drop-blue filter-item {{a}} " id="filter0">All  </a>
-<a href="javascript:filt(1);" class="drop drop-red filter-item {{b}} " id="filter1">Saved </a>
-<a href="javascript:filt(2);" class="drop drop-green filter-item {{c}} " id="filter2">Done</a>
-</div>
-</div>
-
-<section class="article-grid">
-
-  {% for e in art %}
-  <a href="/munchie/{{e.pk}}" class="grid-item"  data-saved="{{e.saved}}"  data-done="{{e.done}}">
-  <div class="grid-item-top">
-  <div class="grid-item-icon">
-  {% if e.done %}<div class="grid-item-icon-c check" style="display:;"><i class="fa fa-check" aria-hidden="true"></i></div>{% endif %}
-  {% if e.saved %}<div class="grid-item-icon-c heart" style="display:;"><i class="fa fa-heart" aria-hidden="true"></i></div>{% endif %}
-  <i class="fa {{e.cat}} fa-5x" aria-hidden="true"></i>
+  <div class="title">Munchies!</div>
+  <div class="filter-wrap">
+    <div class="filter">
+      <a href="javascript:filt(0);" class="drop drop-blue filter-item {{a}} " id="filter0">All  </a>
+      {% if request.user.is_authenticated %}<a href="javascript:filt(1);" class="drop drop-red filter-item {{b}} " id="filter1">Saved </a>
+      <a href="javascript:filt(2);" class="drop drop-green filter-item {{c}} " id="filter2">Done</a>{% endif %}
+    </div>
   </div>
-  </div>
-  <div class="grid-item-title" id="title"><p>{{e.title}}<p></div>
-  <div class="grid-item-box-wrap">
-  <div class="grid-item-box" style="background-color:{{e.b1}};"></div>
-  <div class="grid-item-box" style="background-color:{{e.b2}};"></div>
-  <div class="grid-item-box" style="background-color:{{e.b3}}"></div>
-  </div>
-  </a>
-     {% endfor %}
 
-</section>
+  <section class="article-grid">
+
+    {% for e in art %}
+    <a href="/munchie/{{e.pk}}" class="grid-item" data-saved="{{e.saved}}" data-done="{{e.done}}">
+      <div class="grid-item-top">
+        <div class="grid-item-icon">
+          {% if e.done %}
+          <div class="grid-item-icon-c check" style="display:;"><i class="fa fa-check" aria-hidden="true"></i></div>{% endif %} {% if e.saved %}
+          <div class="grid-item-icon-c heart" style="display:;"><i class="fa fa-heart" aria-hidden="true"></i></div>{% endif %}
+          <i class="fa {{e.cat}} fa-5x" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="grid-item-title" id="title">
+        <p>{{e.title}}
+          <p>
+      </div>
+      <div class="grid-item-box-wrap">
+        <div class="grid-item-box" style="background-color:{{e.b1}};"></div>
+        <div class="grid-item-box" style="background-color:{{e.b2}};"></div>
+        <div class="grid-item-box" style="background-color:{{e.b3}}"></div>
+      </div>
+    </a>
+    {% endfor %}
+
+  </section>
 </div>
 {% endblock %}

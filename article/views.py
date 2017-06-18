@@ -19,7 +19,14 @@ def rand(request):
 
 def get(request, pk):
     r = Post.objects.get(pk=pk)
-    stat = check_stat(art=r, usr=request.user.pk)
+    d = False
+    s = False
+
+    if request.user.is_authenticated():
+        stat = check_stat(art=r, usr=request.user.pk)
+        d = stat[0]
+        s = stat[1]
+
     if r.vis:
         artvar = {'title':r.title,
                   'pk':r.pk,
@@ -31,8 +38,8 @@ def get(request, pk):
                   'links':parselinks(r.links),
                   'long':parsetxt(r.long_desc),
 
-                  'done': stat[0],
-                  'saved': stat[1],
+                  'done': d,
+                  'saved': s,
 
                   'wrap':'back',#META
                   }
