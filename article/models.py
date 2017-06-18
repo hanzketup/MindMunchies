@@ -29,11 +29,11 @@ class Post(models.Model):
     links = JSONField()
     long_desc = JSONField()
 
+    done_usr = models.ManyToManyField(User,related_name ='user_done',blank=True)
+    saved_usr = models.ManyToManyField(User,related_name ='user_saved',blank=True)
+
     def __str__(self):
         return self.title
 
-class Stat(models.Model):
-    post_id = models.ManyToManyField(Post)
-    usr_id = models.ManyToManyField(User)
-    fav = models.BooleanField(default=False)
-    done = models.BooleanField(default=False)
+
+

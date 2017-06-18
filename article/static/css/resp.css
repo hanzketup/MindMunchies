@@ -40,8 +40,10 @@
   .home-row{padding:2rem 0;flex-direction: column;}
   .home-text{font-size: 2em;margin:1rem;}
 
-  .filter-item{width: 100%;text-align: center;}
+  .filter-item{width: 100%;text-align: center;margin:2rem 1rem;}
   .me-title{font-size:4rem;}
+
+  .grid-item{margin:1rem 0;}
 
   input[type=text],input[type=password] {
 

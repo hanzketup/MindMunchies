@@ -60,10 +60,11 @@ def parsetxt(inp):
         snd += "<h1>" + str(k) + "</h1><p>" + str(v) + "</p>"
     return snd
 
-def renderprev(pk): #needs stat conn
+def renderprev(pk,req): #needs stat conn
     rtn = []
     for i in pk:
-        obj = Post.objects.get(pk=i)
+        obj = Post.objects.get(pk=i.pk)
+        stat = check_stat(art=obj,req=req)
         di = {
             'title':obj.title,
             'cat':getcat(obj)[1],
@@ -71,6 +72,16 @@ def renderprev(pk): #needs stat conn
             'b2':getcat(obj)[2],
             'b3':diff(obj.diff)[1],
             'pk':obj.pk,
+            'done':stat[0],
+            'saved':stat[1],
         }
         rtn.append(di)
     return rtn
+
+
+def check_stat(art,req):
+    usr_pk = req.user.pk
+    doneq = art.done_usr.filter(pk=usr_pk).exists()
+    savedq = art.saved_usr.filter(pk=usr_pk).exists()
+
+    return [doneq,savedq]

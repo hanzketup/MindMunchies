@@ -530,14 +530,21 @@ border-right: 2px solid #dedede;
 
 }.grid-item-box:last-child{border-right:none;}
 
-.grid-item-check {
+.grid-item-top{
+
+padding:0rem 0rem 1rem 0rem;
+display: flex;
+justify-content: center;
+align-items: center;
+
+color: rgba(127, 140, 141,0.1);
+border-bottom: 6px dashed;
+
+}
+
+.grid-item-icon-c {
 
 position: absolute;
-bottom:-1.0rem;
-right:-1.0rem;
-
-transition: 0.5s ease;
-
 display: flex;
 justify-content: center;
 align-items: center;
@@ -545,54 +552,41 @@ align-items: center;
 height:8px;
 width: 8px;
 
-border:5px dashed rgba(39, 174, 96,1.0);
-
-padding: 3rem;
-
-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-background-color:rgba(46, 204, 113,0.98);
-border-radius: 50%;
-
-}.grid-item-check i{color:rgba(39, 174, 96,1.0);font-size:2em;}
-.grid-item-check:hover{transform: rotatez(180deg);box-shadow:none;}
-
-.grid-item-heart {
-
-position: absolute;
-top:-1.0rem;
-left:-1.0rem;
-
 transition: 0.5s ease;
-
-display: flex;
-justify-content: center;
-align-items: center;
-
-height:8px;
-width: 8px;
 
 border:5px dashed rgba(192, 57, 43,1.0);
 
 padding: 3rem;
 
 box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-background-color:rgba(231, 76, 60,0.98);
 border-radius: 50%;
 
-}.grid-item-heart i{color:rgba(192, 57, 43,1.0);font-size:2em;}
-.grid-item-heart:hover{transform: rotatez(180deg);box-shadow:none;}
-
-@keyframes heart-frame {
-0%  {top:-0rem;left:-0rem;}
-50% {top:-0.1rem;left:-0.1rem;}
-100%{top:-0rem;left:-0rem;}
 }
 
-@keyframes check-frame {
-0%  {bottom:-0rem;right:-0rem;}
-50% {bottom:-0.1rem;right:-0.1rem;}
-100%{bottom:-0rem;right:-0rem;}
-}
+.grid-item-icon-c i{font-size:2em;transition: 0.65s ease;padding:2.5rem;}
+.grid-item-icon-c i:hover{transform: rotatez(-180deg);}
+.grid-item-icon-c:hover{transform: rotatez(180deg);}
+
+.heart {
+
+  top:-1.0rem;
+  left:-1.0rem;
+
+
+background-color:rgba(231, 76, 60,0.98);
+border:5px dashed rgba(192, 57, 43,1.0);
+
+}.heart i{color:rgba(192, 57, 43,1.0);}
+
+.check {
+
+  bottom:-1.0rem;
+  right:-1.0rem;
+
+background-color:rgba(46, 204, 113,0.98);
+border:5px dashed rgba(39, 174, 96,1.0);
+
+}.check i{color: rgba(39, 174, 96,1.0);}
 
 /************************************************************************************************** */
 .desc-wrap {

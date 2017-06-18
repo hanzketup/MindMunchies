@@ -26,6 +26,7 @@ def get(request, pk):
     r = Post.objects.get(pk=pk)
     if r.vis:
         artvar = {'title':r.title,
+                  'pk':r.pk,
                   'short':r.short_desc,
                   'time':r.time,'timeicon':timeicon(r.time),
                   'cat':getcat(r)[0], 'caticon':getcat(r)[1],'catcolor':getcat(r)[2],
@@ -48,27 +49,15 @@ def me(request):
         return redirect('/login')
 
 def munchies(request):
+        o = Post.objects.all()
         cont = {
             'a':'drop-hover',
             'b':' ',
             'c':' ',
-            'art':'',
+            'art':renderprev(o, request),
 
         }
         return render(request,"article/munchies.html", cont)
-
-def munchies_s(request):
-    if request.user.is_authenticated():
-        return render(request,"article/munchies.html")
-    else:
-        return redirect('/login')
-
-def munchies_d(request):
-    if request.user.is_authenticated():
-        cont = {'art':renderprev([1, ])}
-        return render(request,"article/munchies.html", cont)
-    else:
-        return redirect('/login')
 
 
 def arr(request):

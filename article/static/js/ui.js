@@ -1,35 +1,28 @@
 
 function more_sw(){
-  var block = document.getElementById("more");
-  console.log(block.style.display)
-  if(block.style.display === "none") {
-block.style.display = "block";
 $('html,body').animate({
   scrollTop: $(".more").offset().top},'slow');
 }
-else {
-  $('html,body').animate({
-    scrollTop: $(".back").offset().top},'slow');
-setTimeout(function(){
-    block.style.display = "none";
-  }, 750);
-
-}}
 
 function heart_sw(){
 
-if ( document.getElementById("heart").classList.contains('fa-heart-o') ){
+if ( document.getElementById("heart").classList.contains('fa-heart-o')){
 document.getElementById("heart").classList.remove('fa-heart-o');
 document.getElementById("heart").classList.add('fa-heart');
 document.getElementById("heart-drop").classList.add('drop-hover');
-return;
-}
-  if ( document.getElementById("heart").classList.contains('fa-heart') ){
+
+
+
+return;}
+
+  if ( document.getElementById("heart").classList.contains('fa-heart')){
 document.getElementById("heart").classList.remove('fa-heart');
 document.getElementById("heart").classList.add('fa-heart-o');
 document.getElementById("heart-drop").classList.remove('drop-hover');
-return;
-}
+
+
+
+return;}
 
 }
 
@@ -94,5 +87,48 @@ document.getElementById("noti").classList.add('noti-hide');
 window.setTimeout(function(){
 document.getElementById("noti").style.display = "none";
 },600);
+
+}
+
+function filt(v) {
+    var list = document.querySelectorAll(".grid-item");
+    for(i of list) {
+
+      if(v == 0){
+        i.style.display = 'flex';
+      }
+
+      if(v == 1){
+      if(i.getAttribute("data-saved") == 'True') {
+        i.style.display = 'flex';}
+        else {i.style.display = 'none';}
+    }
+
+
+      if(v == 2){
+      if(i.getAttribute("data-done") == 'True') {
+        i.style.display = 'flex';}
+        else {i.style.display = 'none';}
+        }
+
+  }
+
+if(v == 0){
+  document.getElementById("filter0").classList.add("drop-hover");
+  document.getElementById("filter1").classList.remove("drop-hover");
+  document.getElementById("filter2").classList.remove("drop-hover");
+}
+if(v == 1){
+  document.getElementById("filter1").classList.add("drop-hover");
+  document.getElementById("filter0").classList.remove("drop-hover");
+  document.getElementById("filter2").classList.remove("drop-hover");
+}
+if(v == 2){
+  document.getElementById("filter2").classList.add("drop-hover");
+  document.getElementById("filter0").classList.remove("drop-hover");
+  document.getElementById("filter1").classList.remove("drop-hover");
+}
+
+
 
 }
