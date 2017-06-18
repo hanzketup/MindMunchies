@@ -3,6 +3,7 @@ import re
 import json
 from models import Post,Cat
 
+from django.contrib.auth.models import User
 
 #Home functions
 
@@ -60,11 +61,11 @@ def parsetxt(inp):
         snd += "<h1>" + str(k) + "</h1><p>" + str(v) + "</p>"
     return snd
 
-def renderprev(pk,req): #needs stat conn
+def renderprev(pk,req):
     rtn = []
     for i in pk:
         obj = Post.objects.get(pk=i.pk)
-        stat = check_stat(art=obj,req=req)
+        stat = check_stat(art=obj,usr=req.user.pk)
         di = {
             'title':obj.title,
             'cat':getcat(obj)[1],
@@ -75,13 +76,36 @@ def renderprev(pk,req): #needs stat conn
             'done':stat[0],
             'saved':stat[1],
         }
-        rtn.append(di)
+        if obj.vis:
+            rtn.append(di)
     return rtn
 
 
-def check_stat(art,req):
-    usr_pk = req.user.pk
-    doneq = art.done_usr.filter(pk=usr_pk).exists()
-    savedq = art.saved_usr.filter(pk=usr_pk).exists()
+def check_stat(art,usr):
+    usr_pk = User.objects.get(pk=usr)
+    doneq = art.done_usr.filter(pk=usr_pk.pk).exists()
+    savedq = art.saved_usr.filter(pk=usr_pk.pk).exists()
 
     return [doneq,savedq]
+
+def set_state(req):
+    type = req.POST.get('type')
+    usr = req.POST.get('usr')
+    art = req.POST.get('art')
+    bool = req.POST.get('bool')
+
+    usrobj = User.objects.get(pk=usr)
+    artobj = Post.objects.get(pk=art)
+
+
+    if type == 'saved' and bool == 'true':
+        artobj.saved_usr.add(usrobj)
+
+    if type == 'saved' and bool == 'false':
+        artobj.saved_usr.remove(usrobj)
+
+    if type == 'done' and bool == 'true':
+        artobj.done_usr.add(usrobj)
+
+    if type == 'done' and bool == 'false':
+        artobj.done_usr.remove(usrobj)

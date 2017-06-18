@@ -1,29 +1,25 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render,render_to_response,redirect
+from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login,logout
-from django.http import HttpResponse,HttpResponseRedirect
-from models import Post
+from django.http import HttpResponse,Http404
 from articlefunc import *
 
 
 def index(request):
-    topage = {
-        'title':homewell(request),
-    }
+    topage = {'title':homewell(request),}
     return render(request,"article/home.html", topage)
 
 
 def rand(request):
     rpk = getrandom()
-    #fix for production
-    rurl = 'http://127.0.0.1:8000/munchie/' + str(rpk)
-    return HttpResponseRedirect(rurl)
+    return redirect('/munchie/' + str(rpk))
 
 
 def get(request, pk):
     r = Post.objects.get(pk=pk)
+    stat = check_stat(art=r, usr=request.user.pk)
     if r.vis:
         artvar = {'title':r.title,
                   'pk':r.pk,
@@ -34,6 +30,10 @@ def get(request, pk):
                   'vid':r.vid,'vidvis':vidcheck(r.vid),
                   'links':parselinks(r.links),
                   'long':parsetxt(r.long_desc),
+
+                  'done': stat[0],
+                  'saved': stat[1],
+
                   'wrap':'back',#META
                   }
         return render(request, "article/article.html", artvar)
@@ -80,3 +80,11 @@ def logg(request):
 def loggout(request):
     logout(request)
     return redirect('/')
+
+def stat(request):
+    if request.is_ajax() and request.POST:
+        set_state(request)
+        data = {'success': True}
+        return HttpResponse(json.dumps(data), content_type='application/json')
+    else:
+        raise Http404

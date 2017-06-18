@@ -9,7 +9,10 @@ urlpatterns = [
     url(r'me$', views.me),
     url(r'^munchies$', views.munchies),
     url(r'^achievements$', views.arr),
+
     url(r'^login/$', views.logg),
     url(r'^logout/$', views.loggout),
+
+    url(r'^stat/$', views.stat),
 
 ]

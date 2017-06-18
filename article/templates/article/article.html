@@ -1,41 +1,39 @@
-{% extends "article/base.html" %}
-{% block title %} {{title}} {% endblock %}
-{% block content %}
+{% extends "article/base.html" %} {% block title %} {{title}} {% endblock %} {% block content %}
 
 <div class="sub-title">{{title}}</div>
 
 <div class="desc-wrap">
-<div class="icon-row ns">
+  <div class="icon-row ns">
 
-<div class="icon-item" title="Estimated time" style="color:{{timeicon}};">
-<i class="fa fa-clock-o fa-4x icon" aria-hidden="true"></i>
-<p class="icon-text"><span class="time">{{time}} Hours</span></p>
-</div>
+    <div class="icon-item" title="Estimated time" style="color:{{timeicon}};">
+      <i class="fa fa-clock-o fa-4x icon" aria-hidden="true"></i>
+      <p class="icon-text"><span class="time">{{time}} Hours</span></p>
+    </div>
 
-<div class="icon-item" title="Target audience" style="color:{{catcolor}};">
-<i class="fa {{caticon}} fa-4x icon" aria-hidden="true"></i>
-<p class="icon-text"><span class="diff">{{cat}}</span></p>
-</div>
+    <div class="icon-item" title="Target audience" style="color:{{catcolor}};">
+      <i class="fa {{caticon}} fa-4x icon" aria-hidden="true"></i>
+      <p class="icon-text"><span class="diff">{{cat}}</span></p>
+    </div>
 
-<div class="icon-item" title="Difficulty level" style="color:{{diffcolor}};">
-<i class="fa fa-tachometer fa-4x icon" aria-hidden="true"></i>
-<p class="icon-text"><span class="diff">{{diff}}</span></p>
-</div>
+    <div class="icon-item" title="Difficulty level" style="color:{{diffcolor}};">
+      <i class="fa fa-tachometer fa-4x icon" aria-hidden="true"></i>
+      <p class="icon-text"><span class="diff">{{diff}}</span></p>
+    </div>
 
 
-</div>
-<p class="desc">{{short}}</p>
+  </div>
+  <p class="desc">{{short}}</p>
 </div>
 
 <div class="button-row">
 
-<a href="javascript:heart_sw();" id="heart-drop" class="drop drop-red drop-heart ns" title="Add to favorites" data-pk="{{pk}}">
-  <i id="heart" class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+  <a href="javascript:heart_sw();" id="heart-drop" class="drop drop-red drop-heart {%if saved%}drop-hover{%endif%} ns" title="Add to favorites" data-pk="{{pk}}" data-usr="{{request.user.pk}}">
+  <i id="heart" class="fa {%if saved%}fa-heart{%endif%}{%if not saved%}fa-heart-o{%endif%} fa-2x" aria-hidden="true"></i>
 </a>
 
-<a href="javascript:more_sw();" class="drop drop-yellow ns">Start Learning!</a>
+  <a href="javascript:more_sw();" class="drop drop-yellow ns">Start Learning!</a>
 
-<a href="http://127.0.0.1:8000/munchie/" class="drop drop-green ns">Next Munchie</a>
+  <a href="http://127.0.0.1:8000/munchie/" class="drop drop-green ns">Next Munchie</a>
 </div>
 
 </div>
@@ -43,47 +41,47 @@
 
 <div class="more" id="more" style="display:block;">
 
-<div class="more-container">
+  <div class="more-container">
 
-  <div class="more-row">
+    <div class="more-row">
 
-    <div class="more-item" style="display:{{vidvis}};">
-<div class="videow"><iframe src="https://www.youtube.com/embed/{{vid|safe}}" allowfullscreen></iframe></div>
-    </div>
-
-    <div class="more-item">
-
-      <div class="more-list-w">
-        <ul class="more-list">
-          {{links|safe}}
-        </ul>
+      <div class="more-item" style="display:{{vidvis}};">
+        <div class="videow"><iframe src="https://www.youtube.com/embed/{{vid|safe}}" allowfullscreen></iframe></div>
       </div>
-    </div>
 
-  </div>
+      <div class="more-item">
 
-  <div class="more-row">
-    <div class="more-item">
-
-      <div class="more-text">
-        {{long|safe}}
+        <div class="more-list-w">
+          <ul class="more-list">
+            {{links|safe}}
+          </ul>
+        </div>
       </div>
 
     </div>
-  </div>
 
-<div class="more-row space-around">
+    <div class="more-row">
+      <div class="more-item">
 
-    <a href="https://twitter.com/intent/tweet?text=Hey!%20im%20learning%20cool%20stuff%20check%20it%20out!%20&url=http://mind-munchies.com/" target="_blank" class="drop drop-blue foot-button ns" >
+        <div class="more-text">
+          {{long|safe}}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="more-row space-around">
+
+      <a href="https://twitter.com/intent/tweet?text=Hey!%20im%20learning%20cool%20stuff%20check%20it%20out!%20&url=http://mind-munchies.com/" target="_blank" class="drop drop-blue foot-button ns">
       <i class="fa fa-share fa-3x" aria-hidden="true"></i>
       <div class="foot-button-t"><span>Share<br>Munchie!</span></div>
     </a>
 
-    <a href="javascript:done_sw();show_pop();" id="check-drop" class="drop drop-green drop-done foot-button ns" data-pk="{{pk}}>
-      <i id="check" class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
+      <a href="javascript:done_sw();" id="check-drop" class="drop drop-green drop-done foot-button {%if done%}drop-hover{%endif%} ns" data-pk="{{pk}}" data-usr="{{request.user.pk}}">
+      <i id="check" class="fa {%if done%}fa-check-circle{%endif%}{%if not done%}fa-check-circle-o{%endif%} fa-3x" aria-hidden="true"></i>
       <div class="foot-button-t" id="check-text"><span>Complete<br>Munchie!</span></div>
     </a>
 
-</div>
+    </div>
 
-{% endblock %}
+    {% endblock %}
