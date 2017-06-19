@@ -1,7 +1,7 @@
 import random
 import re
 import json
-from models import Post,Cat
+from .models import Post,Cat
 
 from django.contrib.auth.models import User
 
@@ -40,8 +40,16 @@ def timeicon(time):
 def getcat(r):
     val = r.acat.all()[0]
     catobj = Cat.objects.get(title=val)
-    catobj.color
     return [val,catobj.icon,catobj.color]
+
+def catcall():
+    cats = Cat.objects.all()
+    catlady = ""
+    for i in cats:
+        catlady += '<option value=\"{}\">{}</option>'.format(i.pk,i.title)
+
+    return catlady
+
 
 def vidcheck(video):
     if len(video) < 5:

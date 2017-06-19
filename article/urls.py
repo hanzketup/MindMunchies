@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^munchies$', views.munchies),
     url(r'^achievements$', views.arr),
 
+    url(r'^new-munchie$', views.new),
+
     url(r'^login/$', views.logg),
     url(r'^logout/$', views.loggout),
 

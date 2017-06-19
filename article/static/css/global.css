@@ -88,6 +88,34 @@ body {
   z-index: 5;
 }
 
+.cookie-notice {
+
+display: flex;
+justify-content: space-between;
+
+width: 100%;
+height: auto;
+padding:1rem 0;
+background-color: #f1c40f;
+
+font-family: 'Pacifico';
+font-size: 2em;
+color:#e67e22;
+
+}
+.cookie-notice p{
+  display: flex;
+  align-items: center;
+  padding:0 8rem;
+}
+.cookie-notice a,.cookie-notice a:hover {
+  display: flex;
+  align-items: center;
+  padding:0 4rem;
+  color:#e67e22;
+  text-decoration: none;
+}
+
 .menu-box {
   background-color: rgba(52, 73, 94, 1.0);
   box-shadow: 0px 5px rgba(44, 62, 80, 0.4);
@@ -783,17 +811,56 @@ footer {
   justify-content: center;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password],input[type=number] {
+  display: block;
   height: 10rem;
   width: 45rem;
   margin: 2rem;
   padding: 0rem 1rem;
-  font-size: 4rem;
+  font-size: 3.5rem;
   border: 4px dashed rgba(127, 140, 141, 1.0);
   border-radius: 0;
   color: grey;
   background-color: rgba(236, 240, 241, 1.0);
 }
+
+input[type=number] {
+
+display: blocK;
+padding:1.1rem;
+
+width: 10rem;
+height: auto;
+margin:0;
+
+}
+
+label {text-align: center;}
+
+textarea {
+
+  width: 100%;
+  padding:1rem;
+  font-size: 1.5em !important;
+
+  color: grey;
+  border: 4px dashed rgba(127, 140, 141, 1.0);
+  background-color: rgba(236, 240, 241, 1.0);
+
+}
+
+select {
+
+  width: 100%;
+  padding:2rem;
+  margin: 2rem;
+  color: grey !important;
+  font-size: 1.5em !important;
+  border: 4px dashed rgba(127, 140, 141, 1.0);
+
+}
+
+.form-fw {margin:2rem 0 !important;width:100% !important;}
 
 .form-btn {
   display: block;
@@ -808,4 +875,38 @@ input[type=text], input[type=password] {
   font-size: 1.8em;
   color: rgba(231, 76, 60, 1.0);
   text-align: center;
+}
+
+.form-new {
+
+padding:0 5rem;
+
+}
+
+.form-new-row {
+
+display: flex;
+justify-content:space-between;
+flex-wrap: wrap;
+
+padding:2rem 0;
+
+} .form-new-row > * {margin:2rem !important;}
+
+.form-new-link {
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+
+.form-new-title {
+
+  text-align: center;
+  color:#2980b9;
+
+  font-family: 'Pacifico';
+  font-size: 5em;
+
 }

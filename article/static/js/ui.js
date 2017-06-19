@@ -4,6 +4,9 @@ function more_sw() {
   }, 'slow');
 }
 
+
+function thanksforthecookies() {document.getElementById("cookie").style.display = "none";}
+
 function heart_sw() {
 
   if (document.getElementById("heart").classList.contains('fa-heart-o')) {

@@ -32,6 +32,10 @@ class Post(models.Model):
     done_usr = models.ManyToManyField(User,related_name ='user_done',blank=True)
     saved_usr = models.ManyToManyField(User,related_name ='user_saved',blank=True)
 
+    author = models.TextField(blank=True)
+    author_email = models.EmailField(blank=True)
+    Post_comment = models.TextField(blank=True)
+
     def __str__(self):
         return self.title
 

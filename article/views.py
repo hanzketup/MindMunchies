@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponse,Http404
-from articlefunc import *
+from .articlefunc import *
 
 
 def index(request):
@@ -69,6 +69,13 @@ def munchies(request):
 
 def arr(request):
     return render(request,'article/arr.html')
+
+def new(request):
+
+
+    return render(request,'meta/new.html', {'cats':catcall()})
+
+
 
 def logg(request):
     if request.method == 'GET':

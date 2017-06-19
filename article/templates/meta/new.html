@@ -1,0 +1,106 @@
+{% extends "article/block.html" %}
+{% block title %}Home{% endblock %}
+{% block block-title %}Submit a munchie!{% endblock %}
+{% block block-content %}
+{% load staticfiles %}
+{% csrf_token %}
+<form method="post" action="/new-munchie" class="form-new">
+
+<h1 class="form-new-title">Basics</h1>
+
+<p><input type="text" placeholder="Title" class="form-fw" value="dank"></input></p>
+
+<p><textarea rows="10" placeholder="Short description -- 500 characters max. Should include a short description of the subject and what the user will learn."></textarea></p>
+
+<div class="form-new-row">
+<label>Time:<input type="number" min="1" max="50">
+</input></label>
+
+
+<label>category:<select name="cat">
+    <option selected disabled>Choose here</option>
+    {{cats|safe}}
+</select></label>
+
+
+<label>Difficulty:<select name="diff">
+
+    <option value="1">Beginner</option>
+    <option value="2">Intermediate</option>
+    <option value="3">Advanced</option>
+
+</select></label>
+
+</div>
+
+<hr>
+
+<h1 class="form-new-title">Video</h1>
+
+<label  class="form-fw">Insert the full embed link from a share>embed on youtube<input type="text" placeholder="Youtube embed link (Only youtube accepted)" class="form-fw">
+</input></label>
+
+<hr>
+
+<h1 class="form-new-title">Links</h1>
+
+<div class="form-new-link">
+<input type="text" placeholder="Link01-text"></input><input type="text" placeholder="Link01-link"></input>
+</div>
+<div class="form-new-link">
+<input type="text" placeholder="Link02-text"></input><input type="text" placeholder="Link02-link"></input>
+</div>
+<div class="form-new-link">
+<input type="text" placeholder="Link03-text"></input><input type="text" placeholder="Link03-link"></input>
+</div>
+<div class="form-new-link">
+<input type="text" placeholder="Link04-text"></input><input type="text" placeholder="Link04-link"></input>
+</div>
+<div class="form-new-link">
+<input type="text" placeholder="Link05-text"></input><input type="text" placeholder="Link05-link"></input>
+</div>
+<div class="form-new-link">
+<input type="text" placeholder="Link06-text"></input><input type="text" placeholder="Link06-link"></input>
+</div>
+
+<hr>
+
+<h1 class="form-new-title">Text</h1>
+
+<div class="center"><input type="text" placeholder="text01-title"></input></div>
+<p><textarea rows="2" placeholder="text01 -- block text"></textarea></p>
+
+<div class="center"><input type="text" placeholder="text02-title"></input></div>
+<p><textarea rows="2" placeholder="text02 -- block text"></textarea></p>
+
+<div class="center"><input type="text" placeholder="text03-title"></input></div>
+<p><textarea rows="2" placeholder="text03 -- block text"></textarea></p>
+
+<div class="center"><input type="text" placeholder="text04-title"></input></div>
+<p><textarea rows="2" placeholder="text04 -- block text"></textarea></p>
+
+<div class="center"><input type="text" placeholder="text05-title"></input></div>
+<p><textarea rows="2" placeholder="text05 -- block text"></textarea></p>
+
+<hr>
+
+<h1 class="form-new-title">Meta</h1>
+
+<label  class="form-fw">Name:  (Will be shown in munchie)<input type="text" placeholder="Your name" class="form-fw">
+</input></label>
+
+<label  class="form-fw">Email:  (Will NOT be shown in munchie, in case we would like to contact you about your submission)<input type="text" placeholder="Your Email-adress" class="form-fw">
+</input></label>
+
+<p><textarea rows="5" placeholder="Other comments. If your submission doesn't match any existing categories, please leave a suggestion here"></textarea></p>
+
+
+<div class="center"><button class="drop drop-blue form-btn" type="submit">Submit !</button></div>
+
+</form>
+
+{% endblock %}
+
+{% block tail %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}

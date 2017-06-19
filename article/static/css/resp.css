@@ -6,7 +6,7 @@
 
   .title-icon-t {display: none;}
   .desc-wrap {margin: 0 5rem;}
-  .foot-item i {font-size: 2em;}
+  .foot-item i {font-size: 2em;margin:0;}
   .foot-item span {display: none;}
 
   .more-item{margin:4rem 1rem;}
@@ -64,6 +64,10 @@
 
 .more-item{padding:4rem 0rem;}
 
+.form-new{padding:0;}
+.form-new-link{flex-direction: column;margin:2rem 0;}
+.form-new-link input{margin:0.5rem;}
+
 }
 
 
@@ -97,4 +101,15 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color:rgba(189, 195, 199,1.0);
   outline: 1px solid slategrey;
+}
+
+
+hr {
+    display: block;
+    width: 100%;
+    height:1rem;
+
+    border-bottom: 5px dashed grey !important;
+
+    color:pink;
 }
