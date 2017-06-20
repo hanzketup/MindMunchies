@@ -53,3 +53,14 @@ class EUser(models.Model):
 
     arch = models.ManyToManyField
 
+
+class Msg(models.Model):
+
+    name = models.TextField()
+    email = models.EmailField()
+
+    title = models.TextField()
+    msg = models.TextField()
+
+    def __str__(self):
+        return self.title

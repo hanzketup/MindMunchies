@@ -820,7 +820,7 @@ footer {
 
 .fw {width:100%;}
 
-input[type=text], input[type=password],input[type=number] {
+input[type=text], input[type=password],input[type=number],input[type=email]{
   display: block;
   height: 10rem;
   width: 45rem;

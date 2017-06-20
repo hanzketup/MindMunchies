@@ -4,8 +4,22 @@
 {% block block-content %}
 {% load staticfiles %}
 
+<form method="Post" action="/question">
+{% csrf_token %}
 
+<input name="name" type="text" placeholder="Your name" required></input>
+<input name="email" type="email" placeholder="Your email" required></input>
 
+<br>
+<hr>
+<br>
+
+<input name="title" type="text" placeholder="Subject" required></input>
+<textarea name="msg" rows="10" placeholder="Message" required></textarea>
+
+<div class="center"><button class="drop drop-blue form-btn" type="submit">Send!</button></div>
+
+</form>
 
 {% endblock %}
 {% block tail %}

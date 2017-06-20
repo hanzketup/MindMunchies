@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponse,Http404
 from .articlefunc import *
 
+from .models import Msg
+
 
 def index(request):
     topage = {'title':homewell(request),}
@@ -72,7 +74,8 @@ def arr(request):
 
 def new(request):
     if request.method == 'POST':
-        pass
+        post_staging(request)
+        return redirect('/')
     else:
         return render(request,'meta/new.html', {'cats':catcall()})
 
@@ -110,4 +113,17 @@ def about(request):
     return render(request,'meta/about.html')
 
 def quest(request):
-    return render(request,'meta/quest.html')
+
+    if request.method == 'POST':
+        new_msg = Msg(
+            name=request.POST['name'],
+            email=request.POST['email'],
+
+            title=request.POST['title'],
+            msg=request.POST['msg']
+
+        )
+        new_msg.save()
+        return redirect('/')
+    else:
+        return render(request,'meta/quest.html')
