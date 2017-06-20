@@ -1,6 +1,4 @@
 import random
-import re
-import json
 from .models import Post,Cat
 
 from django.contrib.auth.models import User
@@ -9,7 +7,7 @@ from django.contrib.auth.models import User
 
 def homewell(request):
     if request.user.is_authenticated():
-        return 'Hi, ' + request.user.username + '!'
+        return 'Hi, ' + str(request.user.username).capitalize() + '!'
     else:
         mess = ['Welcome!','Hi!','Hey!','Hello!','Yo!','Wassup!','Howdy!','Hey you!']
         return random.choice(mess)
@@ -127,3 +125,6 @@ def set_state(req):
 
     if type == 'done' and bool == 'false':
         artobj.done_usr.remove(usrobj)
+
+def post_staging(request):
+    pass

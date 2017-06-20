@@ -1,5 +1,8 @@
 from django.conf.urls import url
 
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
+
 from . import views
 
 urlpatterns = [
@@ -11,10 +14,20 @@ urlpatterns = [
     url(r'^achievements$', views.arr),
 
     url(r'^new-munchie$', views.new),
+    url(r'^about$', views.about),
+    url(r'^question$', views.quest),
 
     url(r'^login/$', views.logg),
+    url('^register/', CreateView.as_view(
+        template_name='registration/register.html',
+        form_class=UserCreationForm,
+        success_url='/login'
+    )),
+
     url(r'^logout/$', views.loggout),
 
     url(r'^stat/$', views.stat),
+
+
 
 ]

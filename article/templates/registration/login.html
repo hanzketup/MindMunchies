@@ -8,13 +8,13 @@
 <form method="POST">
       {% csrf_token %}
 
-      <div class="center"><input type="text" placeholder="Username" name="username" style="border: 4px dashed {{borderstyle}};"></div>
+      <div class="center"><input type="text" placeholder="Username" name="username" style="border: 4px dashed {{borderstyle}};" required></div>
 
-      <div class="center"><input type="password" placeholder="Password" name="password" style="border: 4px dashed {{borderstyle}};"></div>
+      <div class="center"><input type="password" placeholder="Password" name="password" style="border: 4px dashed {{borderstyle}};" required></div>
       <button class="drop drop-blue form-btn" type="submit">Login</button>
 
   </form>
 
-<a href="" class="drop drop-green form-btn">Create account</a>
+<a href="/register" class="drop drop-green form-btn">Create account</a>
 
 {% endblock %}

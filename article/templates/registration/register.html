@@ -2,8 +2,12 @@
 {% block title %}Home{% endblock %}
 {% block block-title %}Sign in{% endblock %}
 {% block block-content %}
-{% load staticfiles %}
 
+<form method="post" action=".">
 
+{% csrf_token %}
+{{form.as_p}}
+
+<input class="drop drop-blue form-btn" type="submit" value="Register" name="submit" alt="Register" />
 
 {% endblock %}

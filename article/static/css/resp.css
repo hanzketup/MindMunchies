@@ -21,7 +21,7 @@
 
   .noti-show{width: 100%;}
 
-  .sub-title{font-size: 5em;}
+  .sub-title{font-size: 5em;padding-top:9rem;}
   .title{font-size: 5em;margin-bottom:2rem;padding-top:9rem;}
   .desc-wrap{margin: 0 0.5rem;}
   .base-content{margin: 0 0rem;}
@@ -62,11 +62,14 @@
 .overlay-img{height:20rem;width:20rem;}
 .drop{padding: 1.2rem 2rem;margin: 3rem 0;}
 
+.desc{padding: 3rem 1rem 6rem 1rem;}
+
 .more-item{padding:4rem 0rem;}
 
 .form-new{padding:0;}
 .form-new-link{flex-direction: column;margin:2rem 0;}
 .form-new-link input{margin:0.5rem;}
+.form-new-item{width:100%;}
 
 }
 

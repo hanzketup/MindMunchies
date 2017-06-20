@@ -71,9 +71,10 @@ def arr(request):
     return render(request,'article/arr.html')
 
 def new(request):
-
-
-    return render(request,'meta/new.html', {'cats':catcall()})
+    if request.method == 'POST':
+        pass
+    else:
+        return render(request,'meta/new.html', {'cats':catcall()})
 
 
 
@@ -102,3 +103,11 @@ def stat(request):
         return HttpResponse(json.dumps(data), content_type='application/json')
     else:
         raise Http404
+
+#Meta views
+
+def about(request):
+    return render(request,'meta/about.html')
+
+def quest(request):
+    return render(request,'meta/quest.html')

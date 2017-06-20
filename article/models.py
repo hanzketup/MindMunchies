@@ -6,6 +6,14 @@ from jsonfield import JSONField
 
 from django.contrib.auth.models import User
 
+class Arch(models.Model):
+    title = models.TextField(max_length=40)
+    icon = models.CharField(max_length=100)
+    color = models.CharField(max_length=20,blank=True)
+
+    def __str__(self):
+        return self.title
+
 class Cat(models.Model):
     title = models.TextField(max_length=40)
     icon = models.CharField(max_length=100)
@@ -39,5 +47,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class EUser(models.Model):
 
+    usr = models.OneToOneField(User)
+
+    arch = models.ManyToManyField
 
