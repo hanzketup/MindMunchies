@@ -18,7 +18,7 @@
 }
 
 .more-list li>a {
-  font-family: 'Press Start 2P', cursive;
+	font-weight:bold;
   text-decoration: none !important;
   text-shadow: 1px 1px 0px rgba(52, 73, 94, 0.8);
   padding: 1.5rem 3rem;
@@ -47,7 +47,7 @@
   margin: 1rem 0.5rem;
   transition: all 0.1s ease-out;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 2em;
   text-shadow: 1px 1px 0px rgba(52, 73, 94, 1.0);
   text-align: center;
   background-color: rgba(26, 188, 156, 0.8);
@@ -75,7 +75,9 @@
 .more-text {}
 
 .more-text h1 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Pacifico', cursive;
+  font-size: 3.2em;
+  text-decoration:underline;
   text-align: center;
 }
 

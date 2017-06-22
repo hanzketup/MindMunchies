@@ -45,13 +45,12 @@
 
   .grid-item{margin:1rem;}
 
-  input[type=text],input[type=password] {
+  input[type=text],input[type=password],input[type=email] {
 
-    height: 6rem;
-    width: 25rem;
+    height: 8rem;
+    width: 100%;
     font-size: 2.5rem;
-    margin-left:0;
-    margin-right:0;
+    margin:1rem 0;
 
   }
 
@@ -64,12 +63,20 @@
 
 .desc{padding: 3rem 1rem 6rem 1rem;}
 
-.more-item{padding:4rem 0rem;}
+.more-item{padding:3rem 0rem;margin:1rem;}
+
+.more-text p {padding:1rem 2rem !important;}
+
+.more-list li {font-size:1.8rem !important;}
 
 .form-new{padding:0;}
 .form-new-link{flex-direction: column;margin:2rem 0;}
 .form-new-link input{margin:0.5rem;}
 .form-new-item{width:100%;}
+
+.filter{width:100%;}
+
+.me-wrap{padding:1rem !important;}
 
 }
 
