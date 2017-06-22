@@ -62,7 +62,7 @@ class Post(models.Model):
     author_email = models.EmailField(blank=True)
     Post_comment = models.TextField(blank=True)
 
-    changes = models.ManyToManyField(Msg)
+    changes = models.ManyToManyField(Msg,blank=True)
 
     def __str__(self):
         return self.title
