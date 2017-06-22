@@ -22,6 +22,24 @@ class Cat(models.Model):
     def __str__(self):
         return self.title
 
+class EUser(models.Model):
+
+    usr = models.OneToOneField(User)
+
+    arch = models.ManyToManyField
+
+
+class Msg(models.Model):
+
+    name = models.TextField(blank=True)
+    email = models.EmailField(blank=True)
+
+    title = models.TextField()
+    msg = models.TextField()
+
+    def __str__(self):
+        return self.title
+
 class Post(models.Model):
 
     title = models.TextField(max_length=100)
@@ -44,23 +62,7 @@ class Post(models.Model):
     author_email = models.EmailField(blank=True)
     Post_comment = models.TextField(blank=True)
 
-    def __str__(self):
-        return self.title
-
-class EUser(models.Model):
-
-    usr = models.OneToOneField(User)
-
-    arch = models.ManyToManyField
-
-
-class Msg(models.Model):
-
-    name = models.TextField()
-    email = models.EmailField()
-
-    title = models.TextField()
-    msg = models.TextField()
+    changes = models.ManyToManyField(Msg)
 
     def __str__(self):
         return self.title

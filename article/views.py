@@ -75,10 +75,12 @@ def arr(request):
 def new(request):
     if request.method == 'POST':
         post_staging(request)
-        return redirect('/')
+        return redirect('/new-munchie/thanks')
     else:
         return render(request,'meta/new.html', {'cats':catcall()})
 
+def new_thanks(request):
+    return render(request,'meta/new_thanks.html')
 
 
 def logg(request):
@@ -124,6 +126,36 @@ def quest(request):
 
         )
         new_msg.save()
-        return redirect('/')
+        return redirect('/question/thanks')
     else:
         return render(request,'meta/quest.html')
+
+
+def quest_thanks(request):
+    return render(request,'meta/thanks.html')
+
+
+def change(request):
+    if request.method == 'POST':
+        new_msg = Msg(
+            name=request.POST['name'],
+            email=request.POST['email'],
+
+            title=request.POST['title'],
+            msg=request.POST['msg']
+
+        )
+        new_msg.save()
+
+        pk = request.POST['pk']
+        postobj = Post.objects.get(pk=pk)
+        postobj.changes.add(new_msg)
+
+        return redirect('/change/thanks')
+    else:
+        artid = request.GET.get('id')
+        return render(request,'meta/change.html', {'id':artid})
+
+
+def change_thanks(request):
+    return render(request,'meta/change_thanks.html')

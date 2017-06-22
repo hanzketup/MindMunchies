@@ -1,0 +1,35 @@
+{% extends "article/block.html" %}
+{% block title %}Contact{% endblock %}
+{% block block-title %}Request change!{% endblock %}
+{% block block-content %}
+{% load staticfiles %}
+
+<form method="Post" action="/change">
+{% csrf_token %}
+
+<h3>Insert the id of the article this change requested.</h3>
+
+<hr>
+
+<div class="center form-new-item">
+  <input type="number" name="pk" placeholder="id" value="{{id}}" required>
+</input></div>
+
+<input name="name" type="text" placeholder="Your name" required></input>
+<input name="email" type="email" placeholder="Your email"></input>
+
+<br>
+<hr>
+<br>
+
+<input name="title" type="text" placeholder="Subject" required></input>
+<textarea name="msg" rows="5" placeholder="Message" required></textarea>
+
+<div class="center"><button class="drop drop-blue form-btn" type="submit">Send!</button></div>
+
+</form>
+
+{% endblock %}
+{% block tail %}
+
+{% endblock %}

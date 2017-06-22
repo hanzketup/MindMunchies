@@ -14,8 +14,12 @@ urlpatterns = [
     url(r'^achievements$', views.arr),
 
     url(r'^new-munchie$', views.new),
+    url(r'^new-munchie/thanks$', views.new_thanks),
+    url(r'^change$', views.change),
+    url(r'^change/thanks$', views.change_thanks),
     url(r'^about$', views.about),
     url(r'^question$', views.quest),
+    url(r'^question/thanks$', views.quest_thanks),
 
     url(r'^login/$', views.logg),
     url('^register/', CreateView.as_view(

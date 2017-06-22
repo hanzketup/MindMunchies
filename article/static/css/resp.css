@@ -45,6 +45,8 @@
 
   .grid-item{margin:1rem;}
 
+  .thanks {padding:1rem;font-size: 3em;}
+
   input[type=text],input[type=password],input[type=email] {
 
     height: 8rem;
