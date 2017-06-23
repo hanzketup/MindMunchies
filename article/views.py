@@ -30,12 +30,14 @@ def get(request, pk):
         s = stat[1]
 
     if r.vis:
+        dif = diff(r.diff)
+        cat = getcat(r)
         artvar = {'title':r.title,
                   'pk':r.pk,
                   'short':r.short_desc,
                   'time':r.time,'timeicon':timeicon(r.time),
-                  'cat':getcat(r)[0], 'caticon':getcat(r)[1],'catcolor':getcat(r)[2],
-                  'diff':diff(r.diff)[0], 'diffcolor':diff(r.diff)[1],
+                  'cat':cat[0], 'caticon':cat[1],'catcolor':cat[2],
+                  'diff':dif[0], 'diffcolor':dif[1],
                   'vid':r.vid,'vidvis':vidcheck(r.vid),
                   'links':parselinks(r.links),
                   'long':parsetxt(r.long_desc),

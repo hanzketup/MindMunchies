@@ -92,11 +92,13 @@ def renderprev(pk, req):
             d = stat[0]
             s = stat[1]
 
+        cat = getcat(obj)
+
         di = {
             'title': obj.title,
-            'cat': getcat(obj)[1],
+            'cat': cat[1],
             'b1': timeicon(obj.time),
-            'b2': getcat(obj)[2],
+            'b2': cat[2],
             'b3': diff(obj.diff)[1],
             'pk': obj.pk,
             'done': d,
@@ -126,13 +128,10 @@ def set_state(req):
 
     if type == 'saved' and bool == 'true':
         artobj.saved_usr.add(usrobj)
-
     if type == 'saved' and bool == 'false':
         artobj.saved_usr.remove(usrobj)
-
     if type == 'done' and bool == 'true':
         artobj.done_usr.add(usrobj)
-
     if type == 'done' and bool == 'false':
         artobj.done_usr.remove(usrobj)
 
